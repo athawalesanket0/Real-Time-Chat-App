@@ -22,7 +22,7 @@ const ChatBox = () => {
   }, [messages]);
 
   useEffect(() => {
-    socketRef.current = new WebSocket("ws://localhost:8080");
+    socketRef.current = new WebSocket("wss://real-time-chat-app-backend-wghv.onrender.com");
     socketRef.current.onmessage = (event) => {
       try {
         const message = JSON.parse(event.data);
